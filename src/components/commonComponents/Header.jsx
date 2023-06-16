@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import ytLogo from "../../images/yt-logo.png";
+import yt from "../../images/yt-logo-mobile.png";
 import {
   IoIosSearch,
   IoIosMic,
@@ -33,7 +34,8 @@ const Header = () => {
         >
           <IoIosMenu />
         </button>
-        <img
+        <div className="hidden sm:flex">
+          <img
           src={ytLogo}
           alt=""
           className="yt-logo"
@@ -42,6 +44,18 @@ const Header = () => {
             setCategory("New");
           }}
         />
+        </div>
+        <div className="flex sm:hidden">
+        <img
+          src={yt}
+          alt=""
+          className="yt-logo"
+          onClick={() => {
+            navigate("/");
+            setCategory("New");
+          }}
+        />
+        </div>
       </div>
       <div className="middle-search">
         <div className="input-left-search">
@@ -368,15 +382,16 @@ const Head = styled.div`
       cursor: pointer;
       transition: all 0.3s ease;
       position: relative;
-
-      &:before {
-        content: "Hello";
-        position: absolute;
+      @media screen and (max-width : 1000px){
+        transform: translateX(-2rem);
       }
 
       &:hover {
         transform: scale(1.2, 1.2);
         box-shadow: 0px 0px 8px 5px rgb(109, 106, 106);
+        @media screen and (max-width : 1000px){
+        transform: translateX(-2rem);
+      }
       }
     }
   }

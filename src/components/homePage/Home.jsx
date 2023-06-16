@@ -13,7 +13,14 @@ const Home = () => {
   },[loading])
   return (
     <HomePage>
-      {menu && <LeftBar/>}
+     
+
+      <div className="flex md:hidden">
+      {!menu && <LeftBar />}
+      </div>
+      <div className="hidden md:flex">
+      {menu && <LeftBar />}
+      </div>
        
       {!menu && <div className='hidden sm:flex'><LeftSmallBar /></div>}
       <Feed/>

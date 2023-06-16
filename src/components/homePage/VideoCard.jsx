@@ -49,6 +49,7 @@ const Video = styled.div`
       flex-direction: column;
       align-items: center;
       margin: 1rem 0 ;
+      
       /* justify-content: center; */
       .video-img{width: 296px;
       height: 175px;

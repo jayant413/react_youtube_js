@@ -23,7 +23,16 @@ const SearchResults = () => {
 
   return (
     <SearchVedios>
-      <div className="left-bar">{menu && <LeftBar/>}{!menu && <LeftSmallBar/>}</div>
+      <div className="left-bar"> 
+      <div className="flex xl:hidden">
+      {!menu && <LeftBar />}
+      </div>
+      <div className="hidden xl:flex">
+      {menu && <LeftBar />}
+      </div>{!menu && <div className='hidden sm:flex'>
+        <LeftSmallBar />
+        </div>}
+      </div>
       
       <div className="search-results">
         {!loading && url?.contents?.map((item , id)=>{
@@ -45,13 +54,15 @@ const SearchVedios = styled.div`
     height: calc(100vh - 4.3rem);
     width: 100%;
     
+    
     .search-results{
+      overflow-x: hidden;
       padding-left: 1rem ;
       height: 100%;
       width: 100%;
       overflow-y: auto;
       ::-webkit-scrollbar {
-      width: 8px;
+      width: 0px;
     }
     ::-webkit-scrollbar-track {
       background: transparent;

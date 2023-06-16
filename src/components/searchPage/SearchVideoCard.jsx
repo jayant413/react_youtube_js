@@ -54,6 +54,13 @@ const SVideoCard = styled.div`
        margin: 1.2rem 0 0rem 1rem;
        border-radius: 0.5rem;
        cursor: pointer;
+       @media screen and (max-width:580px){
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-content: center;
+
+        }
        /* &:hover{box-shadow:0 0 3rem 3rem #1a1a1a;} */
        .s-thumbnail-area{
           width: 360px;
@@ -64,12 +71,17 @@ const SVideoCard = styled.div`
             height: 100%;
             object-fit: cover;
             border-radius: 0.5rem;
-           }
+        }
+        @media screen and (max-width:700px){
+            width: 760px;
+          height: 200px;
+        }
        }
        .s-video-detail{
         color: white;
         font-family:  Times, serif;
         margin: 1rem 0.5rem 0.5rem 1rem;
+        
         .s-title{
             font-size: 1.3rem;
             margin-bottom: 0.5rem;
@@ -108,5 +120,30 @@ const SVideoCard = styled.div`
                 }
         }
     }
+
+    @media screen and (max-width:700px){
+          
+
+                .s-title{
+                width: 330px;
+                font-size: 0.9rem;
+                margin-bottom: 0.5rem;
+                font-weight: 500;
+                text-align: justify;
+            }
+            .s-view-time{
+                transform: translateX(4rem) ;
+            }
+            .s-avatar-name{
+               transform: translateY(-2.5rem);
+               margin-bottom: 10px;
+               .s-author-profile{
+                height: 3rem;
+                width: 3rem;
+                transform: translateY(-0.8rem);
+               }
+            }
+            }
+        
        }
 `;

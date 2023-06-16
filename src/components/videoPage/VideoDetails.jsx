@@ -187,15 +187,19 @@ const LoadingSkeleton = styled.div`
 `;
 
 const VideoPage = styled.div`
-  position: relative;
-
+  position: fixed;
+  height: calc(100vh - 4.3rem);
   .vp-left-bar {
     position: absolute;
     z-index: 2;
   }
   .vp-video-related {
+    @media screen and (max-width: 1000px) {
+      display: flex;
+      flex-direction: column;
+    }
     background-color: black;
-    height: calc(100vh - 4.3rem);
+    height: 100%;
     width: 100vw;
     display: flex;
     flex-direction: row;
@@ -203,26 +207,40 @@ const VideoPage = styled.div`
     justify-content: center;
     overflow-y: auto;
     &.vp-vr-opacity {
-      opacity: 80%;
+      opacity: 0.8;
     }
     .vp-video-detail {
       width: 60%;
       height: 100%;
       background-color: transparent;
+      @media screen and (max-width: 1000px) {
+        width: 100%;
+        height: 30rem;
+      }
       .vp-video {
         background-color: blue;
         width: 55vw;
         height: 65vh;
         margin: 1rem auto 1rem auto;
+        @media only screen and (max-width: 1000px) {
+          width: 25rem;
+          height: 20rem;
+          transform: translateY(-2rem);
+        }
       }
       .vp-detail {
         color: white;
         background-color: black;
         width: 55vw;
-        height: calc(100vh -4.3rem);
+        height: 8rem;
         overflow-y: hidden;
         margin: 1rem auto 2rem auto;
         padding: 0.3rem 0.5rem 0 0.5rem;
+        @media screen and (max-width: 1000px) {
+          width: 100%;
+          height: 15rem;
+          transform: translateY(-3.5rem);
+        }
         .vp-detail-title {
           margin-bottom: 0.5rem;
           font-weight: 600;
@@ -231,6 +249,10 @@ const VideoPage = styled.div`
         .vp-detail-avatar-stats {
           display: flex;
           justify-content: space-between;
+          @media screen and (max-width: 1000px) {
+            display: flex;
+            flex-direction: column;
+          }
           .vp-detail-stats-left {
             display: flex;
 
@@ -292,8 +314,10 @@ const VideoPage = styled.div`
 `;
 
 const RightStats = styled.div`
-  transform: translateY(0.2rem);
-
+  @media screen and (max-width: 1000px) {
+    margin-top: 0.5rem;
+  }
+  /* transform: translateY(0.2rem); */
   display: flex;
   align-content: center;
   justify-content: center;
@@ -379,6 +403,9 @@ const RightStats = styled.div`
   }
 
   .vp-detail-stats-option {
+    @media screen and (max-width: 1000px) {
+      display: none;
+    }
     width: 2.2rem;
     height: 2.2rem;
     background-color: #303030;
@@ -395,6 +422,10 @@ const RightStats = styled.div`
 `;
 
 const RelatedArea = styled.div`
+  @media screen and (max-width: 1000px) {
+    width: 100%;
+    /* height: 0rem; */
+  }
   background-color: black;
   width: 33%;
   height: calc(100vh - 4.3rem);
